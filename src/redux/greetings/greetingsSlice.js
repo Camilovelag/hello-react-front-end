@@ -5,8 +5,7 @@ const getGreetings = createAsyncThunk('greetings/getGreetings',
     const response = await fetch('http://127.0.0.1:3000/api/v1/greetings');
     const data = await response.json();
     return data[0].message;
-  }
-);
+  });
 
 const greetingsReducer = createSlice({
   name: 'greetings',
@@ -37,4 +36,4 @@ const greetingsReducer = createSlice({
 });
 
 export default greetingsReducer.reducer;
-export { getGreetings} ;
+export { getGreetings };

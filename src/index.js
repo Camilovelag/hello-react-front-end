@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import App from './components/App';
 import store from './redux/configureStore';
-import { Provider } from 'react-redux';
 import { getGreetings } from './redux/greetings/greetingsSlice';
 
-store.dispatch( getGreetings() );
+store.dispatch(getGreetings());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,5 +13,5 @@ root.render(
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
